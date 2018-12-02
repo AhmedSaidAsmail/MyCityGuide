@@ -51,6 +51,12 @@
                                     <td>{{$customer->seller->name}}</td>
                                     <td>{{$customer->qr_code}}</td>
                                     <td>
+                                        <form method="post" id="deletingForm"
+                                              action="{{route('customer.destroy',['id'=>$customer->id])}}">
+                                            {{csrf_field()}}
+                                            <input type="hidden" name="_method" value="DELETE">
+
+                                        </form>
                                         <ul class="list-inline">
                                             <li>
                                                 <a href="{{route('customer.show',['id'=>$customer->id])}}">
@@ -58,7 +64,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <button>
+                                                <button form="deletingForm">
                                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </button>
                                             </li>
