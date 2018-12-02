@@ -1,6 +1,8 @@
 <?php
 
-
+Route::get('/', function () {
+    return "";
+})->name('home');
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
 Route::post('/login', 'Auth\LoginController@login')->name('admin.login');
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:web'], function () {

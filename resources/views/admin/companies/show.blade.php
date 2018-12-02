@@ -1,12 +1,12 @@
 @extends('admin.layouts._master')
 @section('content')
     <section class="content-header">
-        <h1> Customers
-            <small>Customers tables</small>
+        <h1> Companies
+            <small>Companies tables</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> C-Panel</a></li>
-            <li><a href="#">Customers</a></li>
+            <li><a href="#">Companies</a></li>
         </ol>
     </section>
     <section class="content">
@@ -14,12 +14,12 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <b>{{$customer->name}} Cart</b>
+                        <b>{{$company->name}} Cart</b>
                     </div>
                     <div class="box-body">
                         <div class="row">
                             <div class="col-md-10 text-right">
-                                {{$customer->name}}
+                                {{$company->name}}
                             </div>
                             <div class="col-md-2 text-right">
                                 : الاسم
@@ -27,7 +27,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-10 text-right">
-                                {{$customer->email}}
+                                {{$company->email}}
                             </div>
                             <div class="col-md-2 text-right">
                                 : الاميل
@@ -35,7 +35,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-10 text-right">
-                                {{$customer->id_num}}
+                                {{$company->id_num}}
                             </div>
                             <div class="col-md-2 text-right">
                                 : رقم البطاقة
@@ -43,7 +43,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-10 text-right">
-                                {{$customer->address}}
+                                {{$company->address}}
                             </div>
                             <div class="col-md-2 text-right">
                                 : العنوان
@@ -51,7 +51,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-10 text-right">
-                                {{$customer->seller->name}}
+                                {{$company->seller->name}}
                             </div>
                             <div class="col-md-2 text-right">
                                 : عمولة لصالح
@@ -59,13 +59,13 @@
                         </div>
                         <div class="row">
                             <div class="col-md-4 text-right">
-                                {{$customer->subscribe_end}}
+                                {{$company->subscribe_end}}
                             </div>
                             <div class="col-md-2 text-right">
                                 : النهاية
                             </div>
                             <div class="col-md-4 text-right">
-                                {{$customer->subscribe_date}}
+                                {{$company->subscribe_date}}
                             </div>
                             <div class="col-md-2 text-right">
                                 : البداية
@@ -73,10 +73,26 @@
                         </div>
                         <div class="row">
                             <div class="col-md-10 text-right">
-                                {{$customer->qr_code}}
+                                {{$company->company}}
                             </div>
                             <div class="col-md-2 text-right">
-                                : لينك QR Code
+                                : اسم الشركة
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 text-right">
+                                {{$company->sort}}
+                            </div>
+                            <div class="col-md-2 text-right">
+                                : اسم التصنيف
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 text-right">
+                                {{$company->package}}
+                            </div>
+                            <div class="col-md-2 text-right">
+                                : اسم الباقة
                             </div>
                         </div>
                     </div>
