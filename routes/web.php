@@ -9,5 +9,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:web'], function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
     Route::resource('customer', 'Admin\CustomerController');
+    Route::resource('company', 'Admin\CompanyController');
 });
 Route::get('customer/verify/{qr_code}', 'Admin\CustomerController@verify')->name('customer.verify');

@@ -98,7 +98,27 @@
                         </li>
                     </ul>
                 </li>
-
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-files-o"></i>
+                        <span>Companies</span>
+                        <span class="pull-right-container">
+                <span class="label label-primary pull-right">{{App\Models\Company::all()->count()}}</span>
+                </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{route('company.index')}}">
+                                <i class="fa fa-circle-o"></i> Companies List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('company.create')}}">
+                                <i class="fa fa-circle-o"></i> Add New Company
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </section>
     </aside>
@@ -108,11 +128,11 @@
                 {{Session::get('success')}}
             </div>
         @endif
-            @if(Session::has('failure'))
-                <div class="alert alert-danger alert-dismissable">
-                    {{Session::get('failure')}}
-                </div>
-            @endif
+        @if(Session::has('failure'))
+            <div class="alert alert-danger alert-dismissable">
+                {{Session::get('failure')}}
+            </div>
+        @endif
         @yield('content')
     </div>
 
